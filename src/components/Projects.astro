@@ -1,0 +1,54 @@
+---
+import { projects } from "../data/projects.js";
+---
+
+<section id="work" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-index">01</div>
+      <div>
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2>PROJECTS / EXPERIMENTS</h2>
+        <p class="section-text">
+          Real work will live here: prototypes, experiments, failures, breakthroughs and the videos that prove they happened.
+        </p>
+      </div>
+    </div>
+
+    <div class="projects">
+      {projects.map((project) => (
+        <article class="project-card">
+          <div class="project-top">
+            <span>#{project.number}</span>
+            <span>{project.category}</span>
+          </div>
+
+          <div class="project-media">
+            {project.video ? (
+              <video controls preload="metadata">
+                <source src={project.video} />
+              </video>
+            ) : (
+              <div class="media-placeholder">
+                <span>VIDEO / MEDIA</span>
+                <small>ADD YOUR RESULT HERE</small>
+              </div>
+            )}
+          </div>
+
+          <div class="project-body">
+            <div>
+              <span class="status">{project.status}</span>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+
+            <div class="tags">
+              {project.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
