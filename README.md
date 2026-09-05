@@ -41,3 +41,4 @@ You can also use an external video URL if desired.
 ## Deploy
 
 Push the project to GitHub and import the repository into Vercel.
+Truno Pambudi
